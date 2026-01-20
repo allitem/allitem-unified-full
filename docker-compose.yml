@@ -1,0 +1,10 @@
+version: "3"
+services:
+  orchestrator:
+    image: python:3.11
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: bash -c "pip install -r requirements.txt && python api/server.py"
+    ports:
+      - "8080:8000"
