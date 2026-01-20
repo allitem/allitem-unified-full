@@ -1,1 +1,15 @@
+repos:
+  - name: scanzaclip
+    type: api
+    endpoint: http://localhost:8001/execute
+    tasks: [scan, analyze]
 
+  - name: social
+    type: cli
+    entry: python plugins/social/run.py
+    tasks: [collect]
+
+  - name: genai
+    type: api
+    endpoint: http://localhost:8002/execute
+    tasks: [analyze, predict]
